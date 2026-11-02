@@ -1,0 +1,25 @@
+[project]
+name = "notebooks-ml"
+version = "0.1.0"
+description = "Notebooks resolvidos da disciplina de Machine Learning (Insper)"
+readme = "README.md"
+authors = [
+    { name = "Gabriel Aguiar", email = "gabrielchavesaguiar@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "imbalanced-learn>=0.14",
+    "ipykernel>=7",
+    "matplotlib>=3.10",
+    "numpy>=2.3",
+    "pandas>=2.3,<3",  # pandas 3 quebra o fetch_openml(data_id=44) do M2
+    "scikit-learn>=1.8",
+    "seaborn>=0.13",
+]
+
+[project.scripts]
+notebooks-ml = "notebooks_ml:main"
+
+[build-system]
+requires = ["uv_build>=0.13.5,<0.14.0"]
+build-backend = "uv_build"
